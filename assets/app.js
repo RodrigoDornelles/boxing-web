@@ -1,3 +1,11 @@
+const irand = (min, max) => {
+    return Math.round(Math.random() * (max - min) + min);
+};
+
+const choose = (items) => {
+    return items[irand(0, items.length - 1)];
+};
+
 const FSM = {
     RESTING: 0,
     TRAINING: 1,
@@ -13,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const node = document.getElementById('node');
     let state = FSM.RESTING;
     let time_left = 10;
+    let combo = false;
 
     /** set train name */
     document.title = default_data.name;
@@ -29,33 +38,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /** main loop **/
     setInterval(() => {
-        if (state == FSM.RESTING && time_left == 0) {
+        if (state == FSM.RESTING && time_left) {
+            node.innerHTML = `<p>Començando em ${time_left} ...</p>`;
+        }
+        else if (state == FSM.RESTING && time_left <= 0) {
+            node.innerHTML = `<p>Vamos treinar!</p>`;
             state = FSM.PREPARE;
         }
-        else if (state == FSM.PREPARE && time_left < 0) {
+        else if (state == FSM.PREPARE) {
             time_left = default_data.train_time;
             state = FSM.TRAINING;
+            combo = false;
         }
-        else if (state == FSM.TRAINING && time_left < 0) {
+        else if (state == FSM.TRAINING && time_left <= 0) {
             time_left = default_data.rest_time;
             state = FSM.RESTING;
         }
-    }, 1000);
+    }, 
+        1000
+    );
 
-    /** render loop **/
+    /** render training **/
     setInterval(() => {
-        switch(state) {
-            case FSM.RESTING:
-                node.innerHTML = `<h1>Començando em ${time_left} ...</h1>`;
-                break;
-
-            case FSM.PREPARE:
-                node.innerHTML = `<h1>Vamos treinar!</h1>`;
-                break;
-
-            case FSM.TRAINING:
-                node.innerHTML = `treinando!`;
-                break;
+        if (state != FSM.TRAINING) {
+            return;
         }
-    }, 500);
+
+        if (combo && irand(0, 1)){
+            return;
+        }
+
+        node.innerHTML = `<p>${choose(default_data.combos).join(' ')}</p>`;
+        combo = true;
+    },
+        5000
+    );
 });

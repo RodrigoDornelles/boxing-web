@@ -38,13 +38,15 @@
                     <select id="train" class="validate" required>
                         <option value="" disabled selected>Selecione...</option>
                         <optgroup label="Iniciante">
-                            <option value="escolinha.json">Escolinha de Boxe</option>
-                            <option value="linha.json">Socos em linha</option>
-                            <option value="cruzados.json">Socos cruzados</option>
-                            <option value="defesa.json">Defesas</option>
+                            <option value="JAB;DIRETO;L1;L2;CRUZADO;GANCHO;UPER;AVANCA;RECUA;JAB,DIRETO;CRUZADO,CRUZADO">
+                                Escolinha de Boxe
+                            </option>
+                            <option value="JAB,DIRETO,CRUZADO,DIRETO;JAB,DIRETO,CRUZADO,ESQUIVA,DIRETO;JAB,DIRETO,CRUZADO,CRUZADO">
+                                Combinações básicas
+                            </option>
                         </optgroup>
                         <optgroup label="Avançado">
-                            <option value="personalizado">Personalizar</option>
+                            <option value="personalizado" disabled>Personalizar</option>
                         </optgroup>
                     </select>
                     <label name="train">Modalidade de treino</label>

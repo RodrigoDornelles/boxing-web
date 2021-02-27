@@ -1,0 +1,12 @@
+#node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vmax;
+    height: 80vh;
+}
+
+#node p {
+    display: inline-block;
+    text-align: center;
+}
