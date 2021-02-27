@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <!-- METADATA -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- MATERILIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="assets/helper.css"/>
+        <link rel="stylesheet" href="assets/style.css"/>
+    </head>
+    <body style="margin: 10px auto;max-width: 600px; text-align: center;">
+        <section class="container">
+            <h3>BOXING TRAINNING</h3>
+            <p class="text-justify">
+                Seu objetivo é treinar durante 3 minutos consecutivos sem pausa, você ouvira um primeiro sinal como pré-aviso
+                faltando 10 segundos para acabar a sessão do treino e então recebera o aviso definitivo.
+            </p>
+            <p class="text-justify">
+                <strong>Atenção!</strong> Você não deve parar completamente com as suas atividades, mas sim fazer um descanso ativo
+                e continuar com um treino leve e livre como bases ou sombra.
+            </p>
+            <br/>
+            <form class="row" onsubmit="return false">
+                <div class="input-field col s12">
+                    <input 
+                        placeholder="Recomendado: 3 minutos"
+                        id="rest" type="number" class="validate" min="1" max="30" required
+                    />
+                    <span class="helper-text" data-error="Descanso recomendado até 30 minutos."></span>
+                    <label for="rest">Tempo de descanso</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id="train" class="validate" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <optgroup label="Iniciante">
+                            <option value="escolinha.json">Escolinha de Boxe</option>
+                            <option value="linha.json">Socos em linha</option>
+                            <option value="cruzados.json">Socos cruzados</option>
+                            <option value="defesa.json">Defesas</option>
+                        </optgroup>
+                        <optgroup label="Avançado">
+                            <option value="personalizado">Personalizar</option>
+                        </optgroup>
+                    </select>
+                    <label name="train">Modalidade de treino</label>
+                    <span class="helper-text" data-error="Descanso recomendado até 30 minutos."></span>
+                </div>
+                <div class="input-field col s12 custom" style="display:none">
+                    <input placeholder="Ex: CT Rodrigo Dornelles... (opcional)" id="name" type="text" value="default"/>
+                    <label for="first_name">Nome do treino</label>
+                </div>
+                <div class="col s12 m4 margin10V">
+                    <button class="btn deep-orange waves-effect waves-light w100" type="button" id="sound0">Pré-aviso
+                        <i class="material-icons right">notifications_active</i>
+                    </button>
+                </div>
+                <div class="col s12 m4 margin10V">
+                    <button class="btn deep-orange waves-effect waves-light w100" type="button" id="sound1">Aviso
+                        <i class="material-icons right">notifications_active</i>
+                    </button>
+                </div>
+                <div class="col s12 m4 margin10V">
+                    <button class="btn large red waves-effect waves-light w100" type="subbmit" id="practice">Treinar!
+                        <i class="material-icons right">fitness_center</i>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </body>
+    <!-- CUSTOM SCRIPT -->
+    <script src="assets/prepare.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.FormSelect.init(document.querySelectorAll('select'));
+        });
+    </script>
+</html>
