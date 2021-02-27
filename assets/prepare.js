@@ -29,5 +29,5 @@ document.getElementById("practice").addEventListener("click", () => {
     };
 
     const base64 = btoa(JSON.stringify(data));
-    window.location.assign(`/app.html?training=${base64}`);
+    window.location.assign(`app.html?training=${base64}`);
 });
