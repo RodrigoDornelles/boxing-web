@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /** create real clock */
     setInterval(() => {
         const clock = new Date();
-        nav_clock.innerHTML = `${clock.getHours()}:${clock.getMinutes()}:${clock.getSeconds()}`
+        nav_clock.innerHTML = clock.toLocaleTimeString('pt-BR', {hour12: true});
     }, 1000);
 
     /** chronometer **/

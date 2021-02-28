@@ -10,3 +10,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 992px) {
+    .center-align-on-medium-and-down {
+        text-align: center;
+    }
+}
