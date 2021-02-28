@@ -27,14 +27,6 @@
             <br/>
             <form class="row" onsubmit="return false">
                 <div class="input-field col s12">
-                    <input 
-                        placeholder="Recomendado: 3 minutos"
-                        id="rest" type="number" class="validate" min="1" max="30" required
-                    />
-                    <span class="helper-text" data-error="Descanso recomendado até 30 minutos."></span>
-                    <label for="rest">Tempo de descanso</label>
-                </div>
-                <div class="input-field col s12">
                     <select id="train" class="validate" required>
                         <option value="" disabled selected>Selecione...</option>
                         <optgroup label="Iniciante">
@@ -54,16 +46,39 @@
                             </option>
                         </optgroup>
                         <optgroup label="Avançado">
-                            <option value="personalizado" disabled>Personalizar</option>
+                            <option value="custom;;">Personalizar</option>
                         </optgroup>
                     </select>
                     <label name="train">Modalidade de treino</label>
-                    <span class="helper-text" data-error="Descanso recomendado até 30 minutos."></span>
                 </div>
-                <div class="input-field col s12 custom" style="display:none">
+                <div class="input-field col s12 custom">
                     <input placeholder="Ex: CT Rodrigo Dornelles... (opcional)" id="name" type="text"/>
-                    <label for="first_name">Nome do treino</label>
+                    <label for="name">Nome do treino</label>
                 </div>
+                <div class="input-field col s12">
+                    <input 
+                        placeholder="Recomendado: 3 minutos"
+                        id="rest" type="number" class="validate" min="1" max="30" required
+                    />
+                    <span class="helper-text" data-error="Descanso recomendado até 30 minutos."></span>
+                    <label for="rest">Tempo de descanso</label>
+                </div>
+                <div class="input-field col s12 custom">
+                    <input placeholder="Ex: 5 segundos" id="combo_time" type="number" class="validate" min="1" required/>
+                    <label for="combo_time">Tempo de sequencia</label>
+                    <span class="helper-text" data-error="Digite o tempo para terminar a sequencia."></span>
+                </div>
+                <div class="input-field col s12 custom">
+                    <input placeholder="Ex: 3 minutos (opcional)" id="train_time" type="number" class="validate" min="1" max="10"/>
+                    <label for="train_time">Tempo de treino</label>
+                    <span class="helper-text" data-error="Treino recomendado até 10 minutos."></span>
+                </div>
+                <div class="input-field col s12 custom">
+                    <textarea placeholder="Ex: JAB,DIRETO;CRUZA,CRUZA" id="blow" class="validate materialize-textarea" rows="4" required></textarea>
+                    <label for="blow">Combinações de exercícios</label>
+                    <span class="helper-text" data-error="Digite as combinações dos exercícios separados por ; (ponto e vírgula), enquanto cada movimento deve ser separado , (vírgula)"></span>
+                    <br/><br/>
+                  </div>
                 <div class="col s12 m4 margin10V">
                     <button class="btn deep-orange waves-effect waves-light w100" type="button" id="sound0">Pré-aviso
                         <i class="material-icons right">notifications_active</i>
@@ -87,6 +102,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             M.FormSelect.init(document.querySelectorAll('select'));
+            document.querySelectorAll('.custom').forEach(elem => elem.classList.add('hide'));
         });
     </script>
 </html>
