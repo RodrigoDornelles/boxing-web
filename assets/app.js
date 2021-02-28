@@ -1,14 +1,8 @@
-const irand = (min, max) => {
-    return Math.round(Math.random() * (max - min) + min);
-};
+const irand = (min, max) => Math.round(Math.random() * (max - min) + min);
 
-const choose = (items) => {
-    return items[irand(0, items.length - 1)];
-};
+const choose = (items) => items[irand(0, items.length - 1)];
 
-const draw = (items) => {
-    return `<p>${items.map(item => `<span>${item}</span>`).join(' ')}</p>`;
-};
+const draw = (items) => `<p>${items.map(item => `<span>${item}</span>`).join(' ')}</p>`;
 
 const FSM = {
     RESTING: 0,
@@ -42,31 +36,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /** render training **/
     const training = () => {
-        if (state != FSM.TRAINING) {
+        if (state !== FSM.TRAINING) {
             return;
         }
 
+        clearTimeout(timeout);
         node.innerHTML = draw(choose(default_data.combos));
         timeout = setTimeout(training, default_data.combo_time);
     };
 
     /** main loop **/
     setInterval(() => {
-        if (state == FSM.RESTING && time_left > 0) {
+        if (state === FSM.RESTING && time_left > 0) {
             node.innerHTML = `<p>Començando em ${time_left} ...</p>`;
         }
-        else if (state == FSM.RESTING && time_left <= 0) {
+        else if (state === FSM.RESTING && time_left <= 0) {
             node.innerHTML = `<p>Vamos treinar!</p>`;
             state = FSM.PREPARE;
         }
-        else if (state == FSM.PREPARE) {
+        else if (state === FSM.PREPARE) {
             time_left = default_data.train_time;
             state = FSM.TRAINING;
-            combo = false;
-            clearTimeout(timeout);
             training();
         }
-        else if (state == FSM.TRAINING && time_left <= 0) {
+        else if (state === FSM.TRAINING && time_left <= 0) {
             time_left = default_data.rest_time;
             state = FSM.RESTING;
         }
