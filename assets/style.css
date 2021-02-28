@@ -10,3 +10,20 @@
     display: inline-block;
     text-align: center;
 }
+
+#node span {
+    animation: Glow 1s linear;
+    animation-fill-mode: both;
+}
+
+@keyframes Glow { 
+    0% {background-color: rgba(255,0,0,0);}
+    50% {background-color: rgba(255,0,0,.75);}
+    100% {background-color: rgba(255,0,0,0);}
+}
+
+#node span:nth-child(1) { animation-delay: 1s }
+#node span:nth-child(2) { animation-delay: 2s }
+#node span:nth-child(3) { animation-delay: 3s }
+#node span:nth-child(4) { animation-delay: 4s }
+#node span:nth-child(5) { animation-delay: 5s }

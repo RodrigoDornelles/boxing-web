@@ -6,6 +6,10 @@ const choose = (items) => {
     return items[irand(0, items.length - 1)];
 };
 
+const draw = (items) => {
+    return `<p>${items.map(item => `<span>${item}</span>`).join(' ')}</p>`;
+};
+
 const FSM = {
     RESTING: 0,
     TRAINING: 1,
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const node = document.getElementById('node');
     let state = FSM.RESTING;
     let time_left = 10;
-    let combo = false;
+    let timeout;
 
     /** set train name */
     document.title = default_data.name;
@@ -36,9 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
     /** chronometer **/
     setInterval(() => time_left -= 1, 1000);
 
+    /** render training **/
+    const training = () => {
+        if (state != FSM.TRAINING) {
+            return;
+        }
+
+        node.innerHTML = draw(choose(default_data.combos));
+        timeout = setTimeout(training, default_data.combo_time);
+    };
+
     /** main loop **/
     setInterval(() => {
-        if (state == FSM.RESTING && time_left) {
+        if (state == FSM.RESTING && time_left > 0) {
             node.innerHTML = `<p>Començando em ${time_left} ...</p>`;
         }
         else if (state == FSM.RESTING && time_left <= 0) {
@@ -49,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
             time_left = default_data.train_time;
             state = FSM.TRAINING;
             combo = false;
+            clearTimeout(timeout);
+            training();
         }
         else if (state == FSM.TRAINING && time_left <= 0) {
             time_left = default_data.rest_time;
@@ -56,21 +72,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 
         1000
-    );
-
-    /** render training **/
-    setInterval(() => {
-        if (state != FSM.TRAINING) {
-            return;
-        }
-
-        if (combo && irand(0, 1)){
-            return;
-        }
-
-        node.innerHTML = `<p>${choose(default_data.combos).join(' ')}</p>`;
-        combo = true;
-    },
-        5000
     );
 });
