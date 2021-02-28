@@ -7,11 +7,12 @@
 }
 
 #node p {
-    display: inline-block;
+    display: block;
     text-align: center;
 }
 
 #node span {
+    display: inline-block;
     animation: Glow 1s linear;
     animation-fill-mode: both;
 }

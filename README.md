@@ -27,3 +27,8 @@ Seu objetivo é treinar durante 3 minutos consecutivos sem pausa, até ouvir um 
 | Aquecimento | `PULAR CORDA`<br/>`20 Segundos de prancha`<br/>`20 Abdominais`<br/>`20 Flexões de braço`<br/>`20 Abdominais (estilo remador)` |
 | Escolinha de boxe | `JAB`<br/>`DIRETO`<br/>`L1`<br/>`L2`<br/>`CRUZADO`<br/>`GANCHO`<br/>`UPER`<br/>`AVANCA`<br/>`RECUA`<br/>`JAB` `DIRETO`<br/>`CRUZADO` `CRUZADO` |
 | Combinações básicas | `JAB` `DIRETO` `CRUZADO` `DIRETO`<br/>`JAB` `DIRETO` `ESQUIVA` `DIRETO`<br/>`JAB` `DIRETO` `CRUZADO` `CRUZADO` |
+
+### Intermediário ###
+| Treino | Combinações |
+| :----: | :---------- |
+| Saco de pancadas | `SACO DO PANCADAS` `LIVRE`<br/>`SACO DE PANCADAS` `SOCOS RETOS`<br/>`SACOS DE PANCADAS` `SOCOS CRUZADOS` |
