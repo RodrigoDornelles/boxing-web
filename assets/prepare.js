@@ -1,9 +1,11 @@
 document.getElementById("sound0").addEventListener("click", () => {
-    alert('sound 0');
+    const audio = new Audio('sound/warning.mp3');
+    audio.play();
 });
 
 document.getElementById("sound1").addEventListener("click", () => {
-    alert('sound 1');
+    const audio = new Audio('sound/interval.mp3');
+    audio.play();
 });
 
 document.getElementById("practice").addEventListener("click", () => {

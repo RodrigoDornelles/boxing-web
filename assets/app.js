@@ -11,6 +11,8 @@ const FSM = {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
+    const audio_warning = new Audio('sound/warning.mp3');
+    const audio_interval = new Audio('sound/interval.mp3');
     const url_current = new URL(window.location.href);
     const url_params = new URLSearchParams(url_current.search);
     const default_data = JSON.parse(atob(url_params.get('training')));
@@ -55,11 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
             state = FSM.PREPARE;
         }
         else if (state === FSM.PREPARE) {
+            audio_interval.play();
             time_left = default_data.train_time;
             state = FSM.TRAINING;
             training();
         }
+        else if (state === FSM.TRAINING && time_left == 11) {
+            audio_warning.play();
+        }
         else if (state === FSM.TRAINING && time_left <= 0) {
+            audio_interval.play();
             time_left = default_data.rest_time;
             state = FSM.RESTING;
         }
