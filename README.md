@@ -31,4 +31,9 @@ Seu objetivo é treinar durante 3 minutos consecutivos sem pausa, até ouvir um 
 ### Intermediário ###
 | Treino | Combinações |
 | :----: | :---------- |
-| Saco de pancadas | `SACO DO PANCADAS` `LIVRE`<br/>`SACO DE PANCADAS` `SOCOS RETOS`<br/>`SACOS DE PANCADAS` `SOCOS CRUZADOS` |
+| Saco de pancadas | `SACO DO PANCADAS` `LIVRE`<br/>`SACO DE PANCADAS` `SOCOS RETOS`<br/>`SACO DE PANCADAS` `SOCOS CRUZADOS` |
+
+### Avançado ###
+| Treino | Combinações |
+| :----: | :---------- |
+| Personalizar | _crie uma modalidade de treino_ |
