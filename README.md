@@ -10,11 +10,11 @@
 | :- | - |
 
 ## Como treinar ##
-Após escolher uma das [modalidades de treino](#modalidades-de-treino), uma sequencia de exercicios sera mostrada alternando entre os exercicios de maneira aleatória 
+Após escolher uma das [modalidades de treino](#modalidades-de-treino), uma sequência de exercícios sera mostrada alternando entre os exercicios de maneira aleatória 
 
-Seu objetivo é treinar durante 3 minutos consecutivos sem pausa, até ouvir um primeiro sinal como pré-aviso faltando 10 segundos para acabar a sessão do treino e então recebera o aviso definitivo
+Seu objetivo é treinar durante 3 minutos consecutivos sem pausa, até ouvir um primeiro sinal como pré-aviso faltando 10 segundos para acabar a sessão do treino e então receberá o aviso definitivo
 
-**Atenção!** Você não deve parar completamente com as suas atividades, mas sim fazer um descanso ativo e continuar com um treino leve e livre. *Ex: polichinelo, abdominais, sombra, bases, musculação, pular corda ...*
+**Atenção!** Você não deve parar completamente com as suas atividades, mas fazer um descanso ativo e continuar com um treino leve e livre. *Ex: polichinelo, abdominais, sombra, bases, musculação, pular corda ...*
 
 | Combinações básicas | Descanso ativo |
 | :-----------------: | :------------: |

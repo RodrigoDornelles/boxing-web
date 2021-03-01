@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /** main loop **/
     setInterval(() => {
         if (state === FSM.RESTING && time_left > 0) {
-            node.innerHTML = `<p>Començando em ${time_left} ...</p>`;
+            node.innerHTML = `<p>Começando em ${time_left} ...</p>`;
         }
         else if (state === FSM.RESTING && time_left <= 0) {
             node.innerHTML = `<p>Vamos treinar!</p>`;
