@@ -1,5 +1,5 @@
 # Boxing Web #
-[![license](https://img.shields.io/github/license/rodrigodornelles/boxing-web)](https://github.com/RodrigoDornelles/3bc-lang/blob/master/LICENSE.txt) 
+[![license](https://img.shields.io/github/license/rodrigodornelles/boxing-web)](https://github.com/RodrigoDornelles/boxing-web/blob/master/LICENSE.txt) 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/575cc8a61b794e90a51a4ae29679ae68)](https://www.codacy.com/gh/RodrigoDornelles/boxing-web/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RodrigoDornelles/boxing-web&amp;utm_campaign=Badge_Grade)
 
 > Treinador virtual online para praticantes de pugilismo (boxe) feito em javascript e garra de atleta.
